@@ -8,8 +8,7 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
         elif piece_name.startswith("black"):
             if chessBoard[row+1][col] is None:
                 if row == 1:moves.append((row + 1, col));moves.append((row + 2, col))#appending to the move
-                else:moves.append((row + 1, col));            moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col - 1, turn,));moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col + 1, turn,))#checking pawns capturing next move on board and appending the next row with same col
-
+                else:moves.append((row + 1, col));moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col - 1, turn,));moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col + 1, turn,))#checking pawns capturing next move on board and appending the next row with same col            
         return moves#printing pawns board movements
 
     """
