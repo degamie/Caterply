@@ -11,22 +11,12 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
                 else:moves.append((row + 1, col));moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col - 1, turn,));moves.append(check_side_captures_for_pawn(chessBoard, row + 1, col + 1, turn,))#checking pawns capturing next move on board and appending the next row with same col            
         return moves#printing pawns board movements
 
-    """
-    Possible moves for a Knight
-    """
-
-    if piece_name.endswith("knight"):
-        print("It's a Knight")
-        moves = []
-        moves.append(check_possible_move(chessBoard, row - 2, col - 1, turn))
-        moves.append(check_possible_move(chessBoard, row - 2, col + 1, turn))
-        moves.append(check_possible_move(chessBoard, row - 1, col - 2, turn))
-        moves.append(check_possible_move(chessBoard, row - 1, col + 2, turn))
-        moves.append(check_possible_move(chessBoard, row + 1, col - 2, turn))
-        moves.append(check_possible_move(chessBoard, row + 1, col + 2, turn))
-        moves.append(check_possible_move(chessBoard, row + 2, col - 1, turn))
-        moves.append(check_possible_move(chessBoard, row + 2, col + 1, turn))
-        return moves
+     if piece_name.endswith("knight"):#Knight's Possible moves
+        print("It's a Knight")#printing Knight after its next move
+        moves = []#initalizing moves list 
+        #appending moves from each row nd colm
+        moves.append(check_possible_move(chessBoard, row - 2, col - 1, turn));moves.append(check_possible_move(chessBoard, row - 2, col + 1, turn));moves.append(check_possible_move(chessBoard, row - 1, col - 2, turn));moves.append(check_possible_move(chessBoard, row - 1, col + 2, turn));moves.append(check_possible_move(chessBoard, row + 1, col - 2, turn));moves.append(check_possible_move(chessBoard, row + 1, col + 2, turn));moves.append(check_possible_move(chessBoard, row + 2, col - 1, turn));moves.append(check_possible_move(chessBoard, row + 2, col + 1, turn))
+        return moves#printing moves
     
     """
     Possible moves for a Bishop
