@@ -64,21 +64,25 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
         return moves
 
 
-    """
-    Possible moves for a Queen
-    """
-    if piece_name.endswith("queen"):
-        print("It's a Queen")
-        moves = []
-        # Check possible moves in vertical direction (up and down)
-        for i in range(row + 1, board_size):
-            if check_possible_move(chessBoard, i, col, turn):
-                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):
-                    moves.append((i, col))
+     if piece_name.endswith("queen"):#Queen's Possible moves
+        print("It's a Queen")#printing Queen
+        moves = []#initializing Queen's Movement list
+
+        for i in range(row + 1, board_size):#iterating row and colmns on board
+            if check_possible_move(chessBoard, i, col, turn):#checking best possible moves
+                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):#beginning with board's column
+                    moves.append((i, col))#appending movement's column
                     break
-                moves.append((i, col))
-            else:
-                break
+                moves.append((i, col))##appending movement's other column
+            else:break
+
+        for i in range(row - 1, -1, -1):#iterating to opposite row
+            if check_possible_move(chessBoard, i, col, turn):#checking all possible moves
+                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):#begin with chessboard's column move
+                    moves.append((i, col))#appending queen's movement's every colm
+                    break
+                moves.append((i, col))#appending queen's other movement's every colm
+            else:break
 
         for i in range(row - 1, -1, -1):
             if check_possible_move(chessBoard, i, col, turn):
