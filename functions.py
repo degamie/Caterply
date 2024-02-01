@@ -18,10 +18,7 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
         moves.append(check_possible_move(chessBoard, row - 2, col - 1, turn));moves.append(check_possible_move(chessBoard, row - 2, col + 1, turn));moves.append(check_possible_move(chessBoard, row - 1, col - 2, turn));moves.append(check_possible_move(chessBoard, row - 1, col + 2, turn));moves.append(check_possible_move(chessBoard, row + 1, col - 2, turn));moves.append(check_possible_move(chessBoard, row + 1, col + 2, turn));moves.append(check_possible_move(chessBoard, row + 2, col - 1, turn));moves.append(check_possible_move(chessBoard, row + 2, col + 1, turn))
         return moves#printing moves
     
-    """
-    Possible moves for a Bishop
-    """
-    if piece_name.endswith("bishop"):
+        if piece_name.endswith("bishop"):#Possible moves for a Bishop
         print("It's a Bishop")
         moves = []
         # Check possible moves in diagonal direction (up and down)
