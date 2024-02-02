@@ -81,14 +81,14 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
                 moves.append((i, col))#appending queen's other movement's every colm
             else:break
 
-        for i in range(row - 1, -1, -1):
-            if check_possible_move(chessBoard, i, col, turn):
-                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):
-                    moves.append((i, col))
-                    break
-                moves.append((i, col))
-            else:
+         # Check possible moves in horizontal direction (left and right)
+        for j in range(col + 1, board_size):#iterating next colm with its board size
+            if check_possible_move(chessBoard, row, j, turn):#checking for every row in every piece's moves
+                if chessBoard[row][j] and not chessBoard[row][j].startswith(turn):moves.append((row, j))#appending to the board' row and col
                 break
+                moves.append((row, j))#board row and col
+            else:break
+
 
         # Check possible moves in horizontal direction (left and right)
         for j in range(col + 1, board_size):
