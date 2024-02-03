@@ -148,21 +148,18 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
                     break
         return moves
     
-    """
-    Possible moves for a King
-    """
-    if piece_name.endswith("king"):
-        print("It's a King")
-        moves = []
-        moves.append(check_possible_move(chessBoard, row - 1, col - 1, turn))
-        moves.append(check_possible_move(chessBoard, row - 1, col, turn))
-        moves.append(check_possible_move(chessBoard,row - 1, col + 1, turn))
-        moves.append(check_possible_move(chessBoard, row, col-1, turn))
-        moves.append(check_possible_move(chessBoard, row,col+1, turn))
-        moves.append(check_possible_move(chessBoard, row + 1, col - 1, turn))
-        moves.append(check_possible_move(chessBoard, row + 1, col, turn))
-        moves.append(check_possible_move(chessBoard, row + 1, col + 1, turn))
-        return moves
+      if piece_name.endswith("king"):#Possible moves for a King
+        print("It's a King")#printing King
+        moves = []#Initializing Moveement List
+        moves.append(check_possible_move(chessBoard, row - 1, col - 1, turn))#appending Best possible Movements for each row and column
+        moves.append(check_possible_move(chessBoard, row - 1, col, turn))#appending Best possible Movements for each row
+        moves.append(check_possible_move(chessBoard,row - 1, col + 1, turn))##appending Best possible Movements for next colm 
+        moves.append(check_possible_move(chessBoard, row, col-1, turn))##appending Best possible Movements for prev colm
+        moves.append(check_possible_move(chessBoard, row,col+1, turn))##appending Best possible Movements for next colm
+        moves.append(check_possible_move(chessBoard, row + 1, col - 1, turn))##appending Best possible Movements for prev colm and next row 
+        moves.append(check_possible_move(chessBoard, row + 1, col, turn))#appending Best possible Movements for next row 
+        moves.append(check_possible_move(chessBoard, row + 1, col + 1, turn))#appending Best possible Movements for next row 
+        return moves#printing King's Movements
 
 
     """
