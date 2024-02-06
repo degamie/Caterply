@@ -162,32 +162,22 @@ def get_moves(piece_name, row, col, chessBoard, board_size, turn):
         return moves#printing King's Movements
 
 
-    """
-    Possible moves for a Rook
-    """
-
-    if piece_name.endswith("rook"):
-        print("It's a Rook")
-        moves = []
+     if piece_name.endswith("rook"):print("It's a Rook")#printing Rook 
+        moves = []#movements List Initializing
 
         # Check possible moves in vertical direction (up and down)
-        for i in range(row + 1, board_size):
-            if check_possible_move(chessBoard, i, col, turn):
-                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):
-                    moves.append((i, col))
-                    break
-                moves.append((i, col))
-            else:
-                break
+        for i in range(row + 1, board_size):#Iterating within next move with the board size
+            if check_possible_move(chessBoard, i, col, turn):#checking Rook's all possible moves 
+                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):moves.append((i, col))#appending  the board's next colm  
+                break;moves.append((i, col))#appending the board's colm 
+            else:break#to next board colm
 
-        for i in range(row - 1, -1, -1):
-            if check_possible_move(chessBoard, i, col, turn):
-                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):
-                    moves.append((i, col))
-                    break
-                moves.append((i, col))
-            else:
-                break
+        for i in range(row - 1, -1, -1):#iterating within board's prev row 
+            if check_possible_move(chessBoard, i, col, turn):#checking rook's prev move on board's colm
+                if chessBoard[i][col] and not chessBoard[i][col].startswith(turn):  moves.append((i, col))
+                    break;moves.append((i, col))#appending the board's colm 
+            else:break;#to next board colm
+
 
         # Check possible moves in horizontal direction (left and right)
         for j in range(col + 1, board_size):
