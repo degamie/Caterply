@@ -21,11 +21,9 @@ game_over = False
 # Chessboard properties
 board_size = 8
 square_size = min(screen_width, screen_height) // (board_size + 1)
+selected_color = (255, 90, 48);color1 = (238, 238, 210);color2 = (118, 150, 86)
 
-bgColor = (128, 255, 128)
-selected_color = (255, 90, 48)
-color1 = (0,255,0)
-color2 = (0,0,0)
+
 
 # Chessboard pieces
 pieces = {
